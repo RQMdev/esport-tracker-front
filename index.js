@@ -1,4 +1,21 @@
 
+var toolbardata = {
+        filter:'',
+}
+
+
+
+
+Vue.component('tool-bar',{
+
+data: function () {
+    return toolbardata
+},
+
+})
+
+
+
 
 
 new Vue({

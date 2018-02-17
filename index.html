@@ -82,11 +82,13 @@
       app
       :clipped-left="$vuetify.breakpoint.mdAndUp"
       fixed
+
     >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <span class="hidden-sm-and-down">Google Contacts</span>
+        <span class="hidden-sm-and-down">eSport-Tracker</span>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
       <v-text-field
         flat
         solo-inverted
@@ -94,41 +96,17 @@
         label="Search"
         class="hidden-sm-and-down"
       ></v-text-field>
-      <v-spacer></v-spacer>
+
       <v-btn icon>
-        <v-icon>apps</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>notifications</v-icon>
-      </v-btn>
-      <v-btn icon large>
-        <v-avatar size="32px" tile>
-          <img
-            src="https://vuetifyjs.com/static/doc-images/logo.svg"
-            alt="Vuetify"
-          >
-        </v-avatar>
+        <v-icon>account_circle</v-icon>
       </v-btn>
     </v-toolbar>
 
 
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <v-tooltip right>
-            <v-btn
-              icon
-              large
-              :href="source"
-              target="_blank"
-              slot="activator"
-            >
-              <v-icon large>code</v-icon>
-            </v-btn>
-            <span>Source</span>
-          </v-tooltip>
-        </v-layout>
-      </v-container>
+      <v-carousel>
+        <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i"></v-carousel-item>
+      </v-carousel>
     </v-content>
 
   </v-app>
